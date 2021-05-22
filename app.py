@@ -68,17 +68,8 @@ def callback():
 
         line_bot_api.reply_message(
             event.reply_token,
-            StickerSendMessage(package_id=str(1),sticker_id=str(sk_id))
+            TextSendMessage(text=event.message.text)
         )
-        if msgType == "text":
-        msg = str(event["message"]["text"])
-        replyObj = TextSendMessage(text=msg)
-        line_bot_api.reply_message(rtoken, replyObj)
-
-    else:
-        sk_id = np.random.randint(1,17)
-        replyObj = StickerSendMessage(package_id=str(1),sticker_id=str(sk_id))
-        line_bot_api.reply_message(rtoken, replyObj)
 
     return 'OK'
 
