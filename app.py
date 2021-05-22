@@ -68,7 +68,7 @@ def callback():
 
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=event.message.text)
+            StickerSendMessage(package_id=str(1),sticker_id=str(sk_id))
         )
         if msgType == "text":
         msg = str(event["message"]["text"])
